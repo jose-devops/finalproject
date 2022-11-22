@@ -1,0 +1,40 @@
+
+body{
+   
+    background-image: url(background.jpg);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    
+    
+
+}
+
+txt-1 h1 {
+    font-family: fantasy;
+    font-size: 50px;
+    color: cornflowerblue;
+    text-align: center;
+    
+}
+
+
+
+
+.container-fluid{
+    width: 30%;
+    border: 1px solid black;
+    background-color: white;
+    padding: 30px 30px;
+    margin-top: 280px;
+    color: black;
+    margin-left: 890px
+    
+    
+    /*box-shadow: 1px 1px 5px 2px white;*/
+    
+
+    
+    
+    
+}
+
