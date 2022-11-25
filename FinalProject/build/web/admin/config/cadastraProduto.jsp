@@ -1,17 +1,38 @@
-<%-- 
-    Document   : cadastraProduto
-    Created on : 22 de nov. de 2022, 19:01:58
-    Author     : Alunos
---%>
+<%@ page import= "java.sql.*" %>
+<%@ page import="org.postgresql.Driver" %>
+<%@ page import="util.Upload" %>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%
+    Connection con = null;
+    Statement st = null;
+    ResultSet rs = null;
+    
+    Upload up = new Upload();
+    
+    up.setFolderUpload("arquivos");
+    
+    if(up.formProcess(getServletContext(),request)){
+        
+        String imagem = up.getFiles().get(0);
+        String nome = up.getForm().get("nome").toString();
+        String desc = up.getForm().get("desc").toString();
+        Float valor = Float.parseFloat(up.getForm().get("valor").toString());
+        
+        String url = "jdbc:postgresql://localhost:5432/finalproject";
+        String usuario = "postgres";
+        String senhaBD = "1234";
+        
+        try{
+            Class.forName("org.postgresql.Driver");
+            con = DriverManager.getConnection(url,usuario,senhaBD);
+            st = con.createStatement();
+            st.execute("INSERT INTO produtos(nome,descricao,valor,imagem)VALUES('"+nome+"','"+desc+"', '"+valor+"', '"+imagem+"')");
+            response.sendRedirect("../produtos.jsp?status=1");
+        }catch(Exception e){
+            out.print(e);
+        }
+        
+    }
+    
+
+%>
