@@ -27,13 +27,13 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Usuários</h1>
+                        <h1 class="mt-4">Usu?rios</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Gerenciar Usuários</li>
+                            <li class="breadcrumb-item active">Gerenciar Usu?rios</li>
                         </ol>
                     </div>
                     <div class="container-fluid px-4">
-                        <small>Formulário de cadastro de usuários</small>
+                        <small>Formul?rio de cadastro de usu?rios</small>
                         <form action="config/cadastraUsuario.jsp" method="POST">
                             <div class="mb-3">
                                 <label class="form-label">Nome</label>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="container-fluid px-4">
                         <hr>
-                        <small>Usuários cadastrados</small>
+                        <small>Usu?rios cadastrados</small>
                         <hr>
                         <table id="datatablesSimple">
                             <thead>
@@ -65,7 +65,7 @@
                                     <th>Email</th>
                                     <th>Telefone</th>
                                     <th>Senha</th>
-                                    <th>Ações</th>
+                                    <th>A??es</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -74,7 +74,7 @@
                                     <th>Email</th>
                                     <th>Telefone</th>
                                     <th>Senha</th>
-                                    <th>Ações</th>
+                                    <th>A??es</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -108,7 +108,7 @@
                                               <div class="modal-dialog">
                                                 <div class="modal-content">
                                                   <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir usuário</h1>
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir usu?rio</h1>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                   </div>
                                                   <div class="modal-body">

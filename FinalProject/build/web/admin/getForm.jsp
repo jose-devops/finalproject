@@ -14,7 +14,10 @@
         String imagem = up.getFiles().get(0);
         String nome = up.getForm().get("nome").toString();
         String desc = up.getForm().get("desc").toString();
-        Float valor = Float.parseFloat(up.getForm().get("valor").toString());
+        String endereco = up.getForm().get("endereco").toString();
+        String cidade = up.getForm().get("cidade").toString();
+        String telefone = up.getForm().get("telefone").toString();
+        
         String url = "jdbc:postgresql://localhost:5432/finalproject";
         String usuario = "postgres";
         String senhaBD = "1234";
@@ -22,7 +25,7 @@
             Class.forName("org.postgresql.Driver");
             con = DriverManager.getConnection(url, usuario, senhaBD);
             st = con.createStatement();
-            st.execute("INSERT INTO produtos(nome,descricao,valor,imagem) VALUES('" + nome + "','" + desc + "','" + valor + "','" + imagem + "') ");
+            st.execute("INSERT INTO produtos(nome,descricao,valor,imagem) VALUES('" + nome + "','" + desc + "','" + endereco + "', '" + cidade + "', '" + telefone + "' ,'" + imagem + "') ");
             response.sendRedirect("usuarios.jsp?erro=1000");
         } catch (Exception e) {
             out.println(e);

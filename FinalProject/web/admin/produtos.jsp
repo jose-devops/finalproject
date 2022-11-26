@@ -33,7 +33,7 @@
                         </ol>
                     </div>
                     <div class="container-fluid px-4">
-                        <small>Formulário de cadastro de produtos</small>
+                        <small>Formulario de cadastro de produtos</small>
                         <form action="config/cadastraProduto.jsp" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label class="form-label">Nome do produto</label>
@@ -44,8 +44,16 @@
                                 <input type="text" class="form-control" name="desc" placeholder="Descrição do produto"/> 
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Valor do produto</label>
-                                <input type="text" class="form-control" name="valor" placeholder="Valor do produto"/> 
+                                <label class="form-label">Endereço</label>
+                                <input type="text" class="form-control" name="valor" placeholder="Endereço"/> 
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Cidade</label>
+                                <input type="text" class="form-control" name="valor" placeholder="Endereço"/> 
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Telefone</label>
+                                <input type="text" class="form-control" name="valor" placeholder="Telefone"/> 
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Imagem do produto</label>
@@ -63,7 +71,9 @@
                                 <tr>
                                     <th>Nome</th>
                                     <th>Descrição</th>
-                                    <th>Valor</th>
+                                    <th>Endereço</th>
+                                    <th>Cidade</th>
+                                    <th>Telefone</th>
                                     <th>imagem</th>
                                     <th>Ações</th>
                                 </tr>
@@ -72,7 +82,9 @@
                                 <tr>
                                     <th>Nome</th>
                                     <th>Descrição</th>
-                                    <th>Valor</th>
+                                    <th>Endereço</th>
+                                    <th>Cidade</th>
+                                    <th>Telefone</th>
                                     <th>imagem</th>
                                     <th>Ações</th>
                                 </tr>
@@ -96,10 +108,12 @@
                                           <tr>
                                               <td><%=rs.getString("nome")%></td>
                                               <td><%=rs.getString("descricao")%></td>
-                                              <td><%=rs.getString("valor")%></td>
+                                              <td><%=rs.getString("endereco")%></td>
+                                              <td><%=rs.getString("cidade")%></td>
+                                              <td><%=rs.getString("telefone")%></td>
                                               <td> <img src="../arquivos/<%=rs.getString("imagem")%>" width="50" /> </td>
                                               <td>
-                                                  <a href="editarProduto.jsp?id=<%=rs.getString("id")%>" class="text-info" ><i class="fa fa-pencil-square"></i></a>
+                                                  <a href="editaProduto.jsp?id=<%=rs.getString("id")%>" class="text-info" ><i class="fa fa-pencil-square"></i></a>
                                                   <a href="" class="text-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<% out.print(id); %>" ><i class="fa fa-trash"></i></a>
                                               </td>
                                           </tr>
@@ -108,7 +122,7 @@
                                               <div class="modal-dialog">
                                                 <div class="modal-content">
                                                   <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir usuário</h1>
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir usuario</h1>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                   </div>
                                                   <div class="modal-body">
@@ -142,7 +156,7 @@
                                 con = DriverManager.getConnection(url,usuario,senhaBD);
                                 st = con.createStatement();
                                 st.executeUpdate("DELETE from produtos WHERE id = '"+id+"' ");
-                                response.sendRedirect("produtos.jsp?status=3");//Registro deletado com sucesso
+                                response.sendRedirect("produtos.jsp?status=3");
                             }catch(Exception e){
                                 out.println(e);
                             }
