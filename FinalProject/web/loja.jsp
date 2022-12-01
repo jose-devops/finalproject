@@ -20,20 +20,29 @@
     <body>
         
         <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">Donation´sCenter</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="./index.jsp">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./loja.jsp">Doações</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
-
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="./index.jsp">Donations Store</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="./index.jsp">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="loja.jsp">Doações</a></li>
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="loginUser.jsp">Login</a></li>
+                        
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="logoutUser.jsp">Logout</a></li>
                     </ul>
+                </li>
+            </ul>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
         <!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
@@ -41,7 +50,53 @@
                     <h1 class="display-4 fw-bolder">Produtos para doação</h1>
                     <p class="lead fw-normal text-white-50 mb-0">Faça sua doação!</p>
                 </div>
+                
             </div>
+            <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastre sua doação</a></div>
+                    <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro de produto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+                <form action="admin/config/cadastraProdutoUser.jsp" method="POST" enctype="multipart/form-data">  
+              <div class="modal-body">
+                      <div class="mb-3">
+                                <label class="form-label">Nome do produto</label>
+                                <input type="text" class="form-control" name="nome" placeholder="Nome do produto"/> 
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Descrição</label>
+                                <input type="text" class="form-control" name="desc" placeholder="Descrição do produto"/> 
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Endereço</label>
+                                <input type="text" class="form-control" name="endereco" placeholder="Endereço"/> 
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Cidade</label>
+                                <input type="text" class="form-control" name="cidade" placeholder="Cidade"/> 
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Telefone</label>
+                                <input type="text" class="form-control" name="telefone" placeholder="Telefone"/> 
+                            </div>
+                             <div class="mb-3">
+                                <label class="form-label">Imagem do produto</label>
+                                <input type="file" class="form-control" name="file[]" multiple /> 
+                            </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+              </div>
+              </form>
+            </div>
+           
+          </div>
+        </div>
         </header>
         <!-- Section-->
         <section class="py-5">

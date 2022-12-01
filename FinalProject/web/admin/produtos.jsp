@@ -45,15 +45,15 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Endereço</label>
-                                <input type="text" class="form-control" name="valor" placeholder="Endereço"/> 
+                                <input type="text" class="form-control" name="endereco" placeholder="Endereço"/> 
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Cidade</label>
-                                <input type="text" class="form-control" name="valor" placeholder="Endereço"/> 
+                                <input type="text" class="form-control" name="cidade" placeholder="Cidade"/> 
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Telefone</label>
-                                <input type="text" class="form-control" name="valor" placeholder="Telefone"/> 
+                                <input type="text" class="form-control" name="telefone" placeholder="Telefone"/> 
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Imagem do produto</label>
@@ -168,11 +168,9 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
+        <script src="../js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
+        <script src="../js/datatables-simple-demo.js"></script>
     </body>
 </html>

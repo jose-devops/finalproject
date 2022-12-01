@@ -20,9 +20,8 @@
         Class.forName("org.postgresql.Driver");
         con = DriverManager.getConnection(url,usuario,senhaBD);
         st = con.createStatement();
-        st.execute("Insert into usuarios(nome,email,telefone,senha)VALUES('"+nome+"', '"+email+"', '"+telefone+"', '"+senha+"') ");
-        response.sendRedirect("../usuarios.jsp?status=1");
-        response.sendRedirect("loja.jsp?status=2008");
+        st.execute("Insert into loja(nome,email,telefone,senha)VALUES('"+nome+"', '"+email+"', '"+telefone+"', '"+senha+"') ");
+        response.sendRedirect("loja.jsp?status=200");
     }catch(Exception e){
         out.print(e);
     }

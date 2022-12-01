@@ -30,7 +30,7 @@
             con = DriverManager.getConnection(url,usuario,senhaBD);
             st = con.createStatement();
             st.execute("INSERT INTO produtos(nome,descricao,endereco,cidade,telefone,imagem)VALUES('"+nome+"','"+descricao+"', '"+endereco+"','"+cidade+"','"+telefone+"', '"+imagem+"')");
-            response.sendRedirect("../produtos.jsp?status=1");
+            response.sendRedirect("../../loja.jsp?status=1");
         }catch(Exception e){
             out.print(e);
         }
